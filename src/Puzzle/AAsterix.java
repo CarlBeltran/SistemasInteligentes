@@ -16,12 +16,12 @@ public class AAsterix implements Search<Board> {
         list.add(initial);
         int nodes = 0;
         while (!list.isEmpty()){
-            nodes++;
             for( Board b : Search.nextMovements(list.poll()) ){
                 if( b.equals(solution) )
                     return nodes;
-                b.setDistanceTotal(b.getDistance() + heuristic.estimate(initial, solution));
+                b.setDistanceTotal(b.getDistance() + heuristic.estimate(b, solution));
                 list.add(b);
+                nodes++;
             }
         }
         return nodes;

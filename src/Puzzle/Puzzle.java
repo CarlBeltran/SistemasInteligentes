@@ -21,7 +21,7 @@ public class Puzzle {
             System.out.print(idfs.search(init, answer)+"\t");
             System.out.print(dfs.search(init, answer)+"\t");
             System.out.print(asterixMan.search(init, answer)+"\t");
-            System.out.print(asterixMis.search(init, answer)+'\n');
+            System.out.print(asterixMis.search(init, answer)+"\n");
         }
     }
 
