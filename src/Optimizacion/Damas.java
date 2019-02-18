@@ -1,4 +1,4 @@
 package Optimizacion;
 
-public class Damas{
+public class Damas {
 }

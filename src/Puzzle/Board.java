@@ -22,6 +22,10 @@ public class Board implements Comparable<Board>{
         return Distance;
     }
 
+    public byte[][] getBoard(){
+        return this.board;
+    }
+
     public void setDistance(int Distance) {
         this.Distance = Distance;
     }
