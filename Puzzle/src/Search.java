@@ -10,22 +10,18 @@ public interface Search<T> {
         int[] pos = board.getPos();
         if( pos[0] != 0 ){
             mod = board.move(pos[0]-1, pos[1]);
-            mod.setDistanceTotal(mod.getDistance()+mod.misplaced());
             list.add(mod);
         }
         if( pos[0] != 2 ){
             mod = board.move(pos[0]+1, pos[1]);
-            mod.setDistanceTotal(mod.getDistance()+mod.misplaced());
             list.add(mod);
         }
         if( pos[1] != 0 ){
             mod = board.move(pos[0], pos[1]-1);
-            mod.setDistanceTotal(mod.getDistance()+mod.misplaced());
             list.add(mod);
         }
         if( pos[1] != 2 ){
             mod = board.move(pos[0], pos[1]+1);
-            mod.setDistanceTotal(mod.getDistance()+mod.misplaced());
             list.add(mod);
         }
         return list;

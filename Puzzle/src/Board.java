@@ -32,27 +32,6 @@ public class Board implements Comparable<Board>{
         this.distanceTotal = DistanceTotal;
     }
 
-    public int mannhattan(){
-        int res = 0;
-        for (int i = 0; i < 3 ; i++) {
-            for (int j = 0; j < 3 ; j++) {
-                int[] my = search(goal[i][j]);
-                res += Math.abs(my[0]-i) + Math.abs(my[0]-j);
-            }
-        }
-        return res;
-    }
-
-    public int misplaced(){
-        int res = 0;
-        for (int i = 0; i < 3 ; i++) {
-            for (int j = 0; j < 3 ; j++) {
-                res += (goal[i][j] == this.board[i][j])? 0 : 1;
-            }
-        }
-        return res;
-    }
-
     public Board move(int[] newPos){
         byte[][] res = {{board[0][0], board[0][1], board[0][2]},{board[1][0], board[1][1], board[1][2]},{board[2][0], board[2][1], board[2][2]}};
         if( newPos[0] == pos[0] && ( newPos[1]==pos[1]+1 || newPos[1]==pos[1]-1 ) ){

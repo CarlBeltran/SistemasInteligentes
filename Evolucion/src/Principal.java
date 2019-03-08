@@ -4,7 +4,7 @@ public class Principal {
         Glovito[] poblacion = new Glovito[ cant ];
 
         for( int i = 0; i < cant ; i++ ) {
-            poblacion[i] =  new Glovito( Evolucion.Util.binario( 24 ) );
+            poblacion[i] =  new Glovito( Util.binario( 24 ) );
         }
 
         return poblacion;
@@ -17,9 +17,9 @@ public class Principal {
         Genetico<Glovito> genetico =
                 new Genetico<Glovito>( iniciar( cant ),
                         new GlovitoFitness( ambiente ),
-                        new Elitismo( 20, 20 ),
+                        new Elitismo( 10, 20 ),
                         new GlovitoCrecer() );
-        genetico.aplicar( 1000 );
+        genetico.aplicar( 240 );
 
     }
 }

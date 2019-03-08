@@ -6,20 +6,14 @@ public class Main {
     static Random rn = new Random(System.currentTimeMillis());
 
     public static void main(String[] args) {
-        System.out.println("BFS\tIDDFS\tDFS \tMan\tMis");
-        BFS bfs = new BFS();
-        AAsterisk asteriskMan = new AAsterisk(new Mannhattan());
-        AAsterisk asteriskMis = new AAsterisk(new Missplaced());
-        IterativeDFS idfs = new IterativeDFS();
-        DFS dfs = new DFS();
+        System.out.println("BFS\tIDDFS\tDFS\tMis\tMan");
+        Search<Board>[] algoritmos = new Search[]{new BFS(), new IterativeDFS(), new DFS(), new AAsterisk(new Missplaced()), new AAsterisk(new Mannhattan())};
 
         for (int i = 0; i < 1000; i++) {
             Board init = generate(10);
-            System.out.print(bfs.search(init, answer)+"\t");
-            System.out.print(idfs.search(init, answer)+"\t");
-            System.out.print(dfs.search(init, answer)+"\t");
-            System.out.print(asteriskMan.search(init, answer)+"\t");
-            System.out.print(asteriskMis.search(init, answer)+"\n");
+            for (int j = 0; j < algoritmos.length; j++)
+                System.out.print(algoritmos[j].search(init, answer)+"\t");
+            System.out.println();
         }
     }
 
